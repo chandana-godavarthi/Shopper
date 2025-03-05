@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.profile_main {
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+  height: 89vh;
+  /* background-color: brown; */
+}
+
+.your_account {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.cards {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}

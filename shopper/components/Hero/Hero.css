@@ -1,0 +1,143 @@
+@media only screen and (min-width: 480px) {
+  .hero {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(180deg, #e794ec, #e1ffea22 100%);
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 180px;
+    line-height: 50px;
+    /* background-color: blue; */
+  }
+
+  .hero-left h2 {
+    color: #090909;
+    font-size: 15px;
+    font-weight: 480;
+  }
+
+  .hero-left p {
+    color: #171717;
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .hand-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* background-color: red; */
+  }
+
+  .hand-icon img {
+    width: 50px;
+  }
+
+  .hero-latest-collections {
+    margin-top: 20px;
+  }
+
+  .hero-latest-collections button {
+    display: flex;
+    background-color: #ff4141;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+    height: 40px;
+    border-radius: 70px;
+    font-size: 14px;
+    border: 0;
+    font-weight: 200;
+    color: white;
+  }
+
+  .hero-right {
+    height: 100%;
+    /* background-color: #fb4848; */
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width:360px) and (width<480px){
+    .hero {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        /* border: 1px solid black; */
+        height: 40vh;
+        background: linear-gradient(180deg, #e794ec, #e1ffea22 100%);
+        align-items: center;
+        justify-content: space-around;
+      }
+    
+      .hero-left {
+        display: flex;
+        width: 40%;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10px;
+        line-height: 30px;
+        /* background-color: blue; */
+      }
+    
+      .hero-left h2 {
+        color: #090909;
+        font-size: 15px;
+        font-weight: 480;
+      }
+    
+      .hero-left p {
+        color: #171717;
+        font-size: 25px;
+        font-weight: 600;
+      }
+    
+      .hand-icon {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        /* background-color: red; */
+      }
+    
+      .hand-icon img {
+        width: 40px;
+      }
+    
+      .hero-latest-collections {
+        margin-top: 20px;
+      }
+    
+      .hero-latest-collections button {
+        display: flex;
+        background-color: #ff4141;
+        align-items: center;
+        justify-content: space-around;
+        width: 150px;
+        height: 35px;
+        border-radius: 70px;
+        font-size: 12px;
+        border: 0;
+        font-weight: 200;
+        color: white;
+      }
+    
+      .hero-right {
+        width: 60%;
+        height: 100%;
+        /* background-color: #fb4848; */
+        img {
+          width: 240px;
+        }
+      }
+}

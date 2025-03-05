@@ -1,0 +1,51 @@
+.signup{
+    width: 30%;
+    height: 500px;
+    /* background-color: aqua; */
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid gray;
+}
+
+.signup h3{
+    font-size: 30px;
+}
+
+.signup input{
+    width: 75%;
+    height: 50px;
+    padding-left: 10px;
+    /* margin: 0px auto; */
+}
+
+.signup button{
+    width: 77%;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    border: 0;
+    /* margin: 0px auto; */
+}
+.privacy-policy-signup{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 200;
+    gap: 10px;
+}
+
+.create-acc-signup span{
+    font-size: 15px;
+    font-weight: 200;
+    color: black;
+} 
+
+
+.privacy-policy-signup input{
+    width: 15px;
+}
+

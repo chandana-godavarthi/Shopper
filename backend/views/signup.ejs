@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='siggnup'>
+    <form class="signup" action="/signup" method="post">
+        <h3>SIGN UP</h3>
+        <input type="text" name="username" placeholder='User name' />
+        <input type="email" name="email" placeholder='Email address' />
+        <input type='password' name="password" placeholder='Password'/>
+        <button class="signup_button continue-signup" >Continue</button>
+        <a href="/auth/google"><button type="button" class="google-btn" >
+            Sign in with Google
+          </button></a>
+        <p class='create-acc-signup'><span>Already have an account?</span><a  href="/login" >Login here</a></p>
+        <!-- <p class='privacy-policy-signup'><input type="checkbox" /><span> By continuing,I agree to the terms of use and policy.</span></p> -->
+    </form>
+      </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@media only screen and (min-width: 480px) {
+  .footer {
+    width: 80%;
+
+    margin: 0px auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 25%;
+  }
+
+  .logo-footer p {
+    color: #171717;
+    font-weight: 600;
+    font-size: 25px;
+  }
+
+  .logo-footer img {
+    height: 90%;
+  }
+
+  .footer-menu {
+    /* background-color: red; */
+    width: 60%;
+    margin: 36px auto;
+  }
+
+  .footer-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer-menu ul li {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .social-icons-footer {
+    width: 20%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: blue; */
+    margin-bottom: 30px;
+  }
+
+  .social-icons-footer img {
+    width: 25px;
+  }
+
+  .footer hr {
+    width: 100%;
+    margin-top: 0px;
+    border: 1.2px solid gray;
+  }
+
+  .copyright-footer {
+    margin: 10px 0px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 360px) and (width<480px) {
+  .footer {
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 15spx;
+    width: 200px;
+  }
+
+  .logo-footer p {
+    color: #171717;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .logo-footer img {
+    width: 50px;
+  }
+
+  .footer-menu {
+    /* background-color: red; */
+    width: 80%;
+    margin: 36px auto;
+  }
+
+  .footer-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer-menu ul li {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .social-icons-footer {
+    width: 50%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: blue; */
+    margin-bottom: 30px;
+  }
+
+  .social-icons-footer img {
+    width: 25px;
+  }
+
+  .footer hr {
+    width: 100%;
+    margin-top: 0px;
+    border: 1.2px solid gray;
+  }
+
+  .copyright-footer {
+    margin: 10px 0px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+}

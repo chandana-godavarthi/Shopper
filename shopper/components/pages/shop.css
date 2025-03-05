@@ -1,0 +1,50 @@
+@media only screen and (min-width: 480px) {
+  .shop_items {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    padding-top: 50px;
+    justify-content: space-evenly;
+  }
+
+  .heading {
+    padding-top: 80px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .heading hr {
+    border: 2px solid black;
+    width: 70px;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width:360px) and (width<480px){
+    .shop_items {
+        width: 85%;
+        margin: auto;
+        display: flex;
+        padding-top: 50px;
+        justify-content: space-evenly;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .shop_items .item{
+        width: 100px;
+        margin: 0px 7px;
+    }
+    
+      .heading {
+        padding-top: 80px;
+        text-align: center;
+        font-weight: 700;
+      }
+    
+      .heading hr {
+        border: 2px solid black;
+        width: 70px;
+        margin: auto;
+        }
+}
