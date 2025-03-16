@@ -27,7 +27,7 @@ server.use(
 );
 server.use(
   cors({
-    origin: "http://localhost:4000", // Specify the frontend URL (replace with your React app's URL)
+    origin: "https://jolly-trifle-60d2f8.netlify.app/", // Specify the frontend URL (replace with your React app's URL)
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
