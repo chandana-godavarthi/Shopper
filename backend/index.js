@@ -18,7 +18,8 @@ server.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/shopper",
+      mongoUrl:
+        "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper",
       collectionName: "sessions",
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "lax", secure: false },
@@ -40,7 +41,9 @@ const saltRounds = 10;
 var mydb;
 async function connectDB() {
   try {
-    mydb = await mongoose.connect("mongodb://127.0.0.1:27017/shopper");
+    mydb = await mongoose.connect(
+      "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper"
+    );
     console.log("MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection failed:", error);
