@@ -27,7 +27,7 @@ server.use(
 );
 server.use(
   cors({
-    origin: "http://comfy-dusk-faf804.netlify.app/", // Specify the frontend URL (replace with your React app's URL)
+    origin: "http://comfy-dusk-faf804.netlify.app", // Specify the frontend URL (replace with your React app's URL)
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
