@@ -27,7 +27,7 @@ server.use(
 );
 server.use(
   cors({
-    origin: "http://comfy-dusk-faf804.netlify.app/", // Specify the frontend URL (replace with your React app's URL)
+    origin: "https://enchanting-zuccutto-fff52f.netlify.app/", // Specify the frontend URL (replace with your React app's URL)
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
@@ -78,7 +78,7 @@ server.get("/api/auth", async (req, res) => {
 server.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://comfy-dusk-faf804.netlify.app/",
+    successRedirect: "https://enchanting-zuccutto-fff52f.netlify.app/",
     failureRedirect: "/login",
   })
 );
@@ -91,7 +91,7 @@ server.get("/protected", (req, res) => {
 server.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "http://comfy-dusk-faf804.netlify.app/",
+    successRedirect: "https://enchanting-zuccutto-fff52f.netlify.app/",
   })
 );
 

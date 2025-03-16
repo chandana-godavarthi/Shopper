@@ -20,22 +20,28 @@ const ProtectedRoute = () => {
   const userID = useSelector((state) => state.cartslice.userid);
   const FN = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/auth", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://shopper-1-9e3s.onrender.com/api/auth",
+        {
+          withCredentials: true,
+        }
+      );
       if (response.data.authenticated) {
         setFlag(true);
         dispatch(setAuth(response.data.authenticated));
         console.log(response.data.userid);
         dispatch(setUserId(response.data.userid));
         const datares = await axios.get(
-          "http://localhost:3000/api/store/userdata",
+          "https://shopper-1-9e3s.onrender.com/api/store/userdata",
           { withCredentials: true }
         );
         // console.log(userID);
-        const profdata = await axios.get("http://localhost:3000/api/profile", {
-          withCredentials: true,
-        });
+        const profdata = await axios.get(
+          "https://shopper-1-9e3s.onrender.com/api/profile",
+          {
+            withCredentials: true,
+          }
+        );
         console.log(profdata.data);
         if (datares.data.item) dispatch(setItem(datares.data.item));
         if (datares.data.checkPrice)
@@ -65,7 +71,7 @@ const ProtectedRoute = () => {
   return flag ? (
     <Outlet />
   ) : (
-    (window.location.href = "http://localhost:3000/login")
+    (window.location.href = "https://shopper-1-9e3s.onrender.com/login")
   );
 };
 
