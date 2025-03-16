@@ -19,7 +19,7 @@ server.use(
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl:
-        "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper",
+        "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper?retryWrites=true&w=majority&tls=true",
       collectionName: "sessions",
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "lax", secure: false },
@@ -42,7 +42,7 @@ var mydb;
 async function connectDB() {
   try {
     mydb = await mongoose.connect(
-      "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper"
+      "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper?retryWrites=true&w=majority&tls=true"
     );
     console.log("MongoDB connected");
   } catch (error) {
