@@ -1,6 +1,6 @@
-[submodule "shopper/components/Profile/components"]
-path = shopper/components/Profile/components
-url = https://github.com/vikhil1912/Shopper.git
-[submodule "shopper/shopper/components/Profile/components"]
-	path = shopper/shopper/components/Profile/components
-	url = https://github.com/vikhil1912/Shopper.git
+# [submodule "shopper/components/Profile/components"]
+# path = shopper/components/Profile/components
+# url = https://github.com/vikhil1912/Shopper.git
+# [submodule "shopper/shopper/components/Profile/components"]
+# 	path = shopper/shopper/components/Profile/components
+# 	url = https://github.com/vikhil1912/Shopper.git
