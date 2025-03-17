@@ -35,7 +35,7 @@ passport.use(
       try {
         const newuser = await userAuth.findOne({ email: profile.email });
         console.log(profile);
-        
+
         if (!newuser) {
           const user1 = new userAuth({
             email: profile.email,
@@ -43,11 +43,11 @@ passport.use(
           });
           await user1.save();
           const prof = new profileModel({
-            userid : user1.id,
-            imgurl : profile._json.picture,
-            email : profile._json.email,
-            name : profile._json.given_name,
-          })
+            userid: user1.id,
+            imgurl: profile._json.picture,
+            email: profile._json.email,
+            name: profile._json.given_name,
+          });
           prof.save();
           return done(null, user1);
         } else {
@@ -62,6 +62,7 @@ passport.use(
 );
 
 passport.serializeUser(function (user, done) {
+  console.log(user.id);
   done(null, user.id); //assign the session a unique id user.id.
 });
 

@@ -146,7 +146,7 @@ server.get("/logout", function (req, res, next) {
 });
 
 const isConnected = async (req, res, next) => {
-  console.log(req.isAuthenticated());
+  console.log(req.user);
 
   if (req.isAuthenticated()) return next();
   res.send("please login");
