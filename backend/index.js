@@ -68,8 +68,6 @@ server.get("/signup", (req, res) => {
 });
 
 server.get("/api/auth", async (req, res) => {
-  console.log(req.user);
-
   console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
     res.status(201).json({ authenticated: true, userid: req.user.id });
