@@ -20,7 +20,7 @@ server.use(
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl:
-        "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper?retryWrites=true&w=majority&tls=true",
+        "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper",
       collectionName: "sessions",
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "lax", secure: false },
@@ -43,7 +43,7 @@ var mydb;
 async function connectDB() {
   try {
     mydb = await mongoose.connect(
-      "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper?retryWrites=true&w=majority&tls=true"
+      "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper"
     );
     console.log("MongoDB connected");
   } catch (error) {
@@ -70,8 +70,6 @@ server.get("/signup", (req, res) => {
 server.get("/api/auth", async (req, res) => {
   console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
-    console.log(req.user.id);
-
     res.status(201).json({ authenticated: true, userid: req.user.id });
   } else res.status(401).json({ authenticated: false });
 });
