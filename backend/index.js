@@ -11,6 +11,7 @@ import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
 
 const port = 3000;
+const client_url = "https://enchanting-zuccutto-fff52f.netlify.app/";
 const server = express();
 server.use(
   session({
@@ -27,7 +28,7 @@ server.use(
 );
 server.use(
   cors({
-    origin: "https://enchanting-zuccutto-fff52f.netlify.app/", // Specify the frontend URL (replace with your React app's URL)
+    origin: client_url, // Specify the frontend URL (replace with your React app's URL)
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
@@ -78,7 +79,7 @@ server.get("/api/auth", async (req, res) => {
 server.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "https://enchanting-zuccutto-fff52f.netlify.app/",
+    successRedirect: client_url,
     failureRedirect: "/login",
   })
 );
@@ -91,7 +92,7 @@ server.get("/protected", (req, res) => {
 server.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "https://enchanting-zuccutto-fff52f.netlify.app/",
+    successRedirect: client_url,
   })
 );
 
