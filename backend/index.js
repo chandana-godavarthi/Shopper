@@ -23,7 +23,7 @@ server.use(
         "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper",
       collectionName: "sessions",
     }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "lax", secure: false },
+    cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "none", secure: true },
   })
 );
 server.use(
