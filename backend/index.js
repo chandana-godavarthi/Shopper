@@ -68,6 +68,8 @@ server.get("/signup", (req, res) => {
 });
 
 server.get("/api/auth", async (req, res) => {
+  console.log(req.user);
+
   console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
     res.status(201).json({ authenticated: true, userid: req.user.id });
@@ -147,7 +149,6 @@ server.get("/logout", function (req, res, next) {
 
 const isConnected = async (req, res, next) => {
   console.log(req.user);
-
   if (req.isAuthenticated()) return next();
   res.send("please login");
 };
