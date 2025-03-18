@@ -24,12 +24,16 @@ const Navbar = () => {
   const checkPrice = useSelector((state) => state.cartslice.checkPrice);
   const shipPrice = useSelector((state) => state.cartslice.shipPrice);
   const profimg = useSelector((state) => state.profileslice.profileimg);
+
   const loginFn = async () => {
     setMenu("none");
     try {
-      const response = await axios.get("http://localhost:3000/api/auth", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://shopper-b-hacx.onrender.com/api/auth",
+        {
+          withCredentials: true,
+        }
+      );
       if (response.data.authenticated) {
         setFlag(true);
         dispatch(setAuth({ auth: true }));
@@ -43,7 +47,7 @@ const Navbar = () => {
       console.log(count);
 
       const x = await axios.post(
-        "http://localhost:3000/api/store/userdata",
+        "https://shopper-b-hacx.onrender.com/api/store/userdata",
         {
           userid: userid,
           item: item,
@@ -56,10 +60,13 @@ const Navbar = () => {
       );
       dispatch(setAuth(false));
       dispatch(setUserId(null));
-      const res = await axios.get("http://localhost:3000/logout", {
-        withCredentials: true,
-      });
-      window.location.replace("http://localhost:3000/login");
+      const res = await axios.get(
+        "https://shopper-b-hacx.onrender.com/logout",
+        {
+          withCredentials: true,
+        }
+      );
+      window.location.replace("https://shopper-b-hacx.onrender.com/login");
     } catch {
       console.log("error");
     }
@@ -125,7 +132,8 @@ const Navbar = () => {
         ) : (
           <button
             onClick={() =>
-              (window.location.href = "http://localhost:3000/login")
+              (window.location.href =
+                "https://shopper-b-hacx.onrender.com/login")
             }
             className="login_btn"
           >
