@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import all_product from "../assets/all_product";
 import { Link, useParams } from "react-router-dom";
-import "./Product.css";
+import "./product.css";
 import star_icon from "../assets/star_icon.png";
 import star_dull_icon from "../assets/star_dull_icon.png";
 import Item from "../items/Item";
 import data_product from "../assets/data";
-import { useSelector,useDispatch } from "react-redux";
-import { addProduct,removeProduct } from "../../redux/cartSlice";
-
+import { useSelector, useDispatch } from "react-redux";
+import { addProduct, removeProduct } from "../../redux/cartSlice";
 
 const Product = () => {
-
   const dispatch = useDispatch();
-const counter = useSelector((state)=>state.cartslice.count);
+  const counter = useSelector((state) => state.cartslice.count);
   const params = useParams();
   let founduser = all_product.find((eachUser) => eachUser.id == params.ID);
   let count = 4;
@@ -170,7 +168,14 @@ const counter = useSelector((state)=>state.cartslice.count);
               XXL
             </button>
           </div>
-          <button onClick={()=>{dispatch(addProduct({id:founduser.id}))}} className="product-add-to-cart">Add To Cart</button>
+          <button
+            onClick={() => {
+              dispatch(addProduct({ id: founduser.id }));
+            }}
+            className="product-add-to-cart"
+          >
+            Add To Cart
+          </button>
           <div className="extras">
             <p>
               <span>Category</span> : {user.category}
