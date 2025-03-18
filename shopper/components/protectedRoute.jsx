@@ -11,7 +11,6 @@ import {
   setUserId,
 } from "../redux/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import cartModel from "../../backend/mongoDb/models/cartModel";
 import { setemail, setname, setprofileimg } from "../redux/profileSlice";
 
 const ProtectedRoute = () => {
