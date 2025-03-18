@@ -17,11 +17,6 @@ const server = express();
 const url_client = "https://shopper-1.netlify.app/";
 const uri =
   "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/?retryWrites=true&w=majority&appName=main";
-// Create a new MongoClient
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 server.set("trust proxy", 1);
 server.use(
   session({
