@@ -8,7 +8,6 @@ import passport from "passport";
 import "./config/passport.js";
 import MongoStore from "connect-mongo";
 import { Strategy as LocalStrategy } from "passport-local";
-import { Next } from "react-bootstrap/esm/PageItem.js";
 import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
 
