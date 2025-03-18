@@ -8,11 +8,11 @@ import passport from "passport";
 import "./config/passport.js";
 import MongoStore from "connect-mongo";
 import { Strategy as LocalStrategy } from "passport-local";
+import { Next } from "react-bootstrap/esm/PageItem.js";
 import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
 
 const port = 3000;
-const client_url = "http://shopper-f.netlify.app/";
 const server = express();
 server.use(
   session({
@@ -20,16 +20,15 @@ server.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl:
-        "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper",
+      mongoUrl: "mongodb://127.0.0.1:27017/shopper",
       collectionName: "sessions",
     }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "none", secure: true },
+    cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "lax", secure: false },
   })
 );
 server.use(
   cors({
-    origin: client_url, // Specify the frontend URL (replace with your React app's URL)
+    origin: "http://localhost:4000", // Specify the frontend URL (replace with your React app's URL)
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
@@ -43,9 +42,7 @@ const saltRounds = 10;
 var mydb;
 async function connectDB() {
   try {
-    mydb = await mongoose.connect(
-      "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper"
-    );
+    mydb = await mongoose.connect("mongodb://127.0.0.1:27017/shopper");
     console.log("MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection failed:", error);
@@ -71,6 +68,8 @@ server.get("/signup", (req, res) => {
 server.get("/api/auth", async (req, res) => {
   console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
+    console.log(req.user.id);
+
     res.status(201).json({ authenticated: true, userid: req.user.id });
   } else res.status(401).json({ authenticated: false });
 });
@@ -78,7 +77,7 @@ server.get("/api/auth", async (req, res) => {
 server.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: client_url,
+    successRedirect: "http://localhost:4000/",
     failureRedirect: "/login",
   })
 );
@@ -90,9 +89,7 @@ server.get("/protected", (req, res) => {
 
 server.post(
   "/login",
-  passport.authenticate("local", {
-    successRedirect: client_url,
-  })
+  passport.authenticate("local", { successRedirect: "http://localhost:4000/" })
 );
 
 server.post("/signup", async (req, res) => {
@@ -147,7 +144,8 @@ server.get("/logout", function (req, res, next) {
 });
 
 const isConnected = async (req, res, next) => {
-  console.log(req.user);
+  console.log(req.isAuthenticated());
+
   if (req.isAuthenticated()) return next();
   res.send("please login");
 };

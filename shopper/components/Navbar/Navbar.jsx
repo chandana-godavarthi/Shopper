@@ -27,12 +27,9 @@ const Navbar = () => {
   const loginFn = async () => {
     setMenu("none");
     try {
-      const response = await axios.get(
-        "https://shopper-1-9e3s.onrender.com/api/auth",
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get("http://localhost:3000/api/auth", {
+        withCredentials: true,
+      });
       if (response.data.authenticated) {
         setFlag(true);
         dispatch(setAuth({ auth: true }));
@@ -46,7 +43,7 @@ const Navbar = () => {
       console.log(count);
 
       const x = await axios.post(
-        "https://shopper-1-9e3s.onrender.com/api/store/userdata",
+        "http://localhost:3000/api/store/userdata",
         {
           userid: userid,
           item: item,
@@ -59,13 +56,10 @@ const Navbar = () => {
       );
       dispatch(setAuth(false));
       dispatch(setUserId(null));
-      const res = await axios.get(
-        "https://shopper-1-9e3s.onrender.com/logout",
-        {
-          withCredentials: true,
-        }
-      );
-      window.location.replace("https://shopper-1-9e3s.onrender.com/login");
+      const res = await axios.get("http://localhost:3000/logout", {
+        withCredentials: true,
+      });
+      window.location.replace("http://localhost:3000/login");
     } catch {
       console.log("error");
     }
@@ -131,8 +125,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={() =>
-              (window.location.href =
-                "https://shopper-1-9e3s.onrender.com/login")
+              (window.location.href = "http://localhost:3000/login")
             }
             className="login_btn"
           >

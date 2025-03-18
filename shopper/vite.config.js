@@ -8,9 +8,4 @@ export default defineConfig({
   server: {
     port: 4000,
   },
-  build: {
-    rollupOptions: {
-      external: ["mongoose", "express"], // Prevent backend modules from being bundled
-    },
-  },
 });
