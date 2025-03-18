@@ -205,5 +205,5 @@ server.get("/api/profile", async (req, res) => {
   const userProf = await profileModel.findOne({ userid: req.user.id });
   res.status(200).json(userProf);
 });
-
+server.set("trust proxy", 1);
 server.listen(port);
