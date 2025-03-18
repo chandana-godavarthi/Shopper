@@ -29,7 +29,7 @@ server.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongourl: uri,
+      mongoUrl: uri,
       collectionName: "sessions",
     }),
     cookie: {
