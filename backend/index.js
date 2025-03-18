@@ -16,7 +16,7 @@ const port = 3000;
 const server = express();
 const url_client = "https://shopper-1.netlify.app/";
 const uri =
-  "mongodb+srv://vikhil1912:<db_password>@main.o87s7.mongodb.net/?retryWrites=true&w=majority&appName=main";
+  "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/?retryWrites=true&w=majority&appName=main";
 // Create a new MongoClient
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
