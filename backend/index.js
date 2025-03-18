@@ -15,7 +15,7 @@ const port = 3000;
 const server = express();
 const url_client = "https://shopper-1.netlify.app/";
 const mongourl =
-  "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper";
+  "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/?retryWrites=true&w=majority&appName=main";
 server.use(
   session({
     secret: "TOPSECRET",
