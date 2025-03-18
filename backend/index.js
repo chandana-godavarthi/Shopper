@@ -8,12 +8,12 @@ import passport from "passport";
 import "./config/passport.js";
 import MongoStore from "connect-mongo";
 import { Strategy as LocalStrategy } from "passport-local";
-import { Next } from "react-bootstrap/esm/PageItem.js";
 import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
 
 const port = 3000;
 const server = express();
+const url_client = "https://shopper-1.netlify.app/";
 server.use(
   session({
     secret: "TOPSECRET",
@@ -23,12 +23,12 @@ server.use(
       mongoUrl: "mongodb://127.0.0.1:27017/shopper",
       collectionName: "sessions",
     }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "lax", secure: false },
+    cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "none", secure: true },
   })
 );
 server.use(
   cors({
-    origin: "http://localhost:4000", // Specify the frontend URL (replace with your React app's URL)
+    origin: url_client, // Specify the frontend URL (replace with your React app's URL)
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
@@ -77,7 +77,7 @@ server.get("/api/auth", async (req, res) => {
 server.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:4000/",
+    successRedirect: url_client,
     failureRedirect: "/login",
   })
 );
@@ -89,7 +89,7 @@ server.get("/protected", (req, res) => {
 
 server.post(
   "/login",
-  passport.authenticate("local", { successRedirect: "http://localhost:4000/" })
+  passport.authenticate("local", { successRedirect: url_client })
 );
 
 server.post("/signup", async (req, res) => {
