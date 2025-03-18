@@ -10,19 +10,25 @@ import MongoStore from "connect-mongo";
 import { Strategy as LocalStrategy } from "passport-local";
 import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
+import { MongoClient } from "mongodb";
 
 const port = 3000;
 const server = express();
 const url_client = "https://shopper-1.netlify.app/";
-const mongourl =
-  "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/?retryWrites=true&w=majority&appName=main";
+const uri =
+  "mongodb+srv://vikhil1912:<db_password>@main.o87s7.mongodb.net/?retryWrites=true&w=majority&appName=main";
+// Create a new MongoClient
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 server.use(
   session({
     secret: "TOPSECRET",
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: mongourl,
+      mongourl: uri,
       collectionName: "sessions",
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "none", secure: true },
@@ -44,7 +50,7 @@ const saltRounds = 10;
 var mydb;
 async function connectDB() {
   try {
-    mydb = await mongoose.connect(mongourl);
+    mydb = await mongoose.connect(uri);
     console.log("MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection failed:", error);
