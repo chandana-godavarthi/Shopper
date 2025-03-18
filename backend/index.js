@@ -7,6 +7,7 @@ import session from "express-session";
 import passport from "passport";
 import "./config/passport.js";
 import MongoStore from "connect-mongo";
+import { Strategy as LocalStrategy } from "passport-local";
 import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
 
