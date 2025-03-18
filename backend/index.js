@@ -12,7 +12,7 @@ import cartModel from "./mongoDb/models/cartModel.js";
 import profileModel from "./mongoDb/models/userProfile.js";
 
 const port = 3000;
-const client_url = "https://enchanting-zuccutto-fff52f.netlify.app/";
+const client_url = "http://shopper-f.netlify.app/";
 const server = express();
 server.use(
   session({
