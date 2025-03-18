@@ -14,13 +14,15 @@ import profileModel from "./mongoDb/models/userProfile.js";
 const port = 3000;
 const server = express();
 const url_client = "https://shopper-1.netlify.app/";
+const mongourl =
+  "mongodb+srv://vikhil1912:vicky1912@main.o87s7.mongodb.net/shopper";
 server.use(
   session({
     secret: "TOPSECRET",
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/shopper",
+      mongoUrl: mongourl,
       collectionName: "sessions",
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000, sameSite: "none", secure: true },
@@ -42,7 +44,7 @@ const saltRounds = 10;
 var mydb;
 async function connectDB() {
   try {
-    mydb = await mongoose.connect("mongodb://127.0.0.1:27017/shopper");
+    mydb = await mongoose.connect(mongourl);
     console.log("MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection failed:", error);
